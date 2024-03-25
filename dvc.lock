@@ -34,15 +34,15 @@ stages:
     params:
       params.yaml:
         train:
-          n_estimators: 1000
-          learning_rate: 0.001
+          n_estimators: 100
+          learning_rate: 0.004
           max_depth: 10
           random_state: 42
     outs:
     - path: data/weights.joblib
       hash: md5
-      md5: 2bfb7ad56525f3031ed1a649e3604c0a
-      size: 112384305
+      md5: 7e3f82df6d9fd0ac13b6652386373c94
+      size: 11055244
   test:
     cmd: python test.py
     deps:
@@ -52,8 +52,8 @@ stages:
       size: 222845
     - path: data/weights.joblib
       hash: md5
-      md5: 2bfb7ad56525f3031ed1a649e3604c0a
-      size: 112384305
+      md5: 7e3f82df6d9fd0ac13b6652386373c94
+      size: 11055244
     - path: test.py
       hash: md5
       md5: 81a91b395c992cc7d7ee605a65331f97
@@ -61,5 +61,5 @@ stages:
     outs:
     - path: data/metrics.json
       hash: md5
-      md5: 11657e9ec3797090242e73ea7667eadc
+      md5: 57f0a4bdc126cbb3a2570acc62c9b05a
       size: 30
