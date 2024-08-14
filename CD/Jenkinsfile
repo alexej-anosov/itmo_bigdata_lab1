@@ -26,7 +26,7 @@ pipeline {
         
         stage('Run container') {
             steps {
-                sh 'docker compose up -d'
+                sh 'docker rm -v -f $(docker ps -qa) && docker compose up -d'
             }
         }
     }
