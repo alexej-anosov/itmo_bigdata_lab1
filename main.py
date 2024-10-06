@@ -18,8 +18,8 @@ def get_health():
 
 
 @app.post("/request/")
-def model_request(day: Day) -> float:
+def model_request(day: Day) -> dict:
     day_list = list(dict(day).values())
     day_array = np.array(day_list)
     result = model.predict(day_array.reshape(1, -1))
-    return round(result[0], 3)
+    return {"result": round(result[0], 3)}
